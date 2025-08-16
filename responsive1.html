@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Landing Page</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Navigation Bar */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        transition: background-color 0.3s ease;
+        z-index: 1000;
+    }
+
+    nav.scrolled {
+        background-color: #333;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        padding: 8px 12px;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+        background-color: #ff6600;
+        color: #fff;
+    }
+
+    /* Page Content */
+    section {
+        height: 100vh;
+        padding: 50px;
+        color: white;
+    }
+
+    #home {
+        background: linear-gradient(45deg, #3d3f40, #25232387);
+    }
+
+    #about {
+        background: linear-gradient(45deg, #896983, #6f516b);
+    }
+
+    #services {
+        background: linear-gradient(45deg, #a77f60, #603f36);
+    }
+
+    #contact {
+        background: linear-gradient(45deg, #82a5a3, #477c9d);
+    }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+    <h1>Welcome to My Home Page</h1>
+</section>
+<section id="about">
+    <h1>About Us</h1>
+</section>
+<section id="services">
+    <h1>Our Services</h1>
+</section>
+<section id="contact">
+    <h1>Contact Us</h1>
+</section>
+
+<script>
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+</script>
+
+</body>
+</html>
